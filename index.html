@@ -16,6 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./css/main.min.css">
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
@@ -75,19 +76,19 @@
           <h2 class="visually-hidden">Особливості</h2>
           <ul class="list feature__list">
             <li class="feature__item">
-              <h3 class="feature__title title-color">УВАГА ДО ДЕТАЛЕЙ</h3>
+              <h3 class="feature__title title--color">УВАГА ДО ДЕТАЛЕЙ</h3>
               <p class="feature__text">Ідейні міркування, і навіть початок повсякденної роботи з формування позиції.</p>
             </li>
             <li class="feature__item">
-              <h3 class="feature__title title-color">ПУНКТУАЛЬНІСТЬ</h3>
+              <h3 class="feature__title title--color">ПУНКТУАЛЬНІСТЬ</h3>
               <p class="feature__text">Завдання організації, особливо рамки і місце навчання кадрів тягне у себе.</p>
             </li>
             <li class="feature__item">
-              <h3 class="feature__title title-color">ПЛАНУВАННЯ</h3>
+              <h3 class="feature__title title--color">ПЛАНУВАННЯ</h3>
               <p class="feature__text">Так само консультація з широким активом значною мірою зумовлює.</p>
             </li>
             <li class="feature__item">
-              <h3 class="feature__title title-color">СУЧАСНІ ТЕХНОЛОГІЇ</h3>
+              <h3 class="feature__title title--color">СУЧАСНІ ТЕХНОЛОГІЇ</h3>
               <p class="feature__text">Значимість цих проблем настільки очевидна, що реалізація планових завдань.</p>
             </li>
           </ul>
@@ -96,7 +97,7 @@
       <!-- Чим ми займаємося -->
       <section class="work section">        
         <div class="container">
-          <h2 class="section__title title-color">Чим ми займаємося</h2>
+          <h2 class="section__title title--color">Чим ми займаємося</h2>
           <ul class="list work__list">
             <li class="work__item">
               <div class="work__img">
@@ -122,12 +123,12 @@
       <!-- Наша команда -->
       <section class="team section">        
         <div class="container">
-          <h2 class="section__title title-color">Наша команда</h2>
+          <h2 class="section__title title--color">Наша команда</h2>
           <ul class="list team__list">
             <li class="team__item">
               <img src="./images/img11.jpg" alt="Ігор Дем'яненко" width="270" />
               <div class="member">
-                <h3 class="title-color member__title">Ігор Дем'яненко</h3>
+                <h3 class="title--color member__title">Ігор Дем'яненко</h3>
                 <p class="member__text">Product Designer</p>
                 <ul class="social list">
                   <li>
@@ -188,7 +189,7 @@
             <li class="team__item">
               <img src="./images/img44.jpg" alt="Ольга Рєпіна" width="270" />
               <div class="member">
-                <h3 class="title-color member__title">Ольга Рєпіна</h3>
+                <h3 class="title--color member__title">Ольга Рєпіна</h3>
                 <p class="member__text">Frontend Developer</p>
                 <ul class="social list">
                   <li>
@@ -249,7 +250,7 @@
             <li class="team__item">
               <img src="./images/img22.jpg" alt="Микола Тарасов" width="270" />
               <div class="member">
-                <h3 class="title-color member__title">Микола Тарасов</h3>
+                <h3 class="title--color member__title">Микола Тарасов</h3>
                 <p class="member__text">Marketing</p>
                 <ul class="social list">
                   <li>
@@ -310,7 +311,7 @@
             <li class="team__item">
               <img src="./images/img33.jpg" alt="Михайло Єрмаков" width="270" />
               <div class="member">
-                <h3 class="title-color member__title">Михайло Єрмаков</h3>
+                <h3 class="title--color member__title">Михайло Єрмаков</h3>
                 <p class="member__text">UI Designer</p>
                 <ul class="social list">
                   <li>
@@ -374,7 +375,7 @@
       <!-- Постійні клієнти -->
       <section class="customers section">        
         <div class="container">
-          <h2 class="section__title title-color">Постійні клієнти</h2>
+          <h2 class="section__title title--color">Постійні клієнти</h2>
           <ul class="list customers__list">
             <li class="customers__item">
               <a
@@ -572,7 +573,7 @@
           </svg>
         </button>
         <p class="modal__title">Залиште свої дані, ми вам передзвонимо</p>
-        <form class="form" name="form">          
+        <form class="form form--distance" name="form">          
             <label class="form__label" for="user-name">Ім'я</label>
             <div class="form__wrapper">
               <input class="form__field" type="text" name="user-name" id="user-name" />
@@ -602,15 +603,15 @@
               placeholder="Введіть текст"
               rows="6"
             ></textarea>
-            <div class="form-checkbox">
-              <input class="form-checkbox__field" type="checkbox" id="user-agreement" />
+            <div class="checkbox">
+              <input class="checkbox__field" type="checkbox" id="user-agreement" />
 
               <label for="user-agreement"
                 >Погоджуюся з розсилкою та приймаю
-                <a class="form-checkbox__link" href="">Умови договору</a>
+                <a class="checkbox__link" href="">Умови договору</a>
               </label>
             </div>
-            <button class="form-checkbox__button button" type="submit">Відправити</button>
+            <button class="form__button button" type="submit">Відправити</button>
           
         </form>
       </div>

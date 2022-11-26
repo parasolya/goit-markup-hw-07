@@ -91,7 +91,7 @@ address {
   margin: -1px;
 }
 
-.title-color {
+.title--color {
   color: var(--title-text-color);
 }
 .section__title {
@@ -401,9 +401,7 @@ address {
   background-position: center;
   background-size: cover;
 }
-/* Кнопки */
-
-
+/* Кнопка */
 .hero__button {
   padding: 10px 32px;
   color: var(--white-color);
@@ -427,6 +425,7 @@ address {
 .hero__button:focus {
   background-color: #188ce8;
 }
+
 /* Підвал */
 .footer {
   background-color: var(--background-color-hero);
@@ -571,19 +570,7 @@ address {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-.portfolio .title {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-}
-.portfolio .product {
-  font-size: 16px;
-  line-height: 1.9;
-  letter-spacing: 0.03em;
-}
-
-.list.filter {
+.filter {
   margin-bottom: 50px;
   display: flex;
   justify-content: center;
@@ -598,14 +585,27 @@ address {
 .portfolio__item {
   flex-basis: calc((100% - 60px) / 3);
 }
+
 .card {
   padding: 20px 24px;
   border: 1px solid var(--portfolio-border-color);
   border-top: none;
 }
+.card__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
 .card__title--distance {
   margin-bottom: 4px;
 }
+.card__product {
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
+
 .portfolio__link {
   display: block;
 
@@ -651,20 +651,7 @@ address {
   /* animation: bottom-to-top 250ms cubic-bezier(0.4, 0, 0.2, 1) both; */
 }
 
-/* Анімації */
-@keyframes bottom-to-top {
-  0% {
-    opacity: 0;
-    transform: translateY(400px);
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 /* Модальне вікно */
 .backdrop {
   position: fixed;
@@ -683,7 +670,23 @@ address {
   visibility: hidden;
   pointer-events: none;
 }
+.modal {
+  position: absolute;
 
+  width: 528px;
+  height: 581px;
+
+  padding: 40px;
+
+  background-color: var(--white-color);
+
+  top: 50%;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(-50%);
+
+  transition: transform var(--anim-fast), opacity var(--anim-fast);
+}
 .modal__button {
   position: absolute;
   right: 8px;
@@ -710,32 +713,10 @@ address {
 .modal__button:focus .modal__icon {
   fill: var(--accent-color);
 }
-
-.modal {
-  position: absolute;
-
-  width: 528px;
-  height: 581px;
-
-  padding: 40px;
-
-  background-color: var(--white-color);
-
-  top: 50%;
-  left: 50%;
-
-  transform: translateX(-50%) translateY(-50%);
-
-  transition: transform var(--anim-fast), opacity var(--anim-fast);
-}
-
 .backdrop.is-hidden .modal {
   opacity: 0;
   transform: translateX(-50%) translateY(-70%);
 }
-
-/* Модальна група */
-
 .modal__title {
   color: var(--title-text-color);
   font-weight: 700;
@@ -744,13 +725,15 @@ address {
   letter-spacing: 0.03em;
   text-align: center;
 }
+
+/* Модальна група */
 .form {
+  user-select: none;
+}
+.form--distance {
   margin-top: 12px;
 }
-
 .form__field {
-  /* position: absolute; */
-  /* box-sizing: border-box; */
   width: 100%;
   height: 40px;
   background-color: transparent;
@@ -766,7 +749,6 @@ address {
 .form__field:focus {
   border-color: var(--accent-color);
 }
-
 .form__wrapper {
   position: relative;
   height: 40px;
@@ -782,7 +764,20 @@ address {
 
   margin-bottom: 4px;
 }
+.form__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  fill: var(--portfolio-title-color);
 
+  transition: fill var(--anim-fast);
+}
+.form__wrapper:hover .form__icon,
+.form__wrapper:focus .form__icon {
+  fill: var(--accent-color);
+}
+/* textarea */
 .form__massage {
   box-sizing: border-box;
   width: 100%;
@@ -811,7 +806,8 @@ address {
   letter-spacing: 0.01em;
   padding-top: 8px;
 }
-.form-checkbox {
+/* checkbox */
+.checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -822,17 +818,16 @@ address {
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
 }
-.form-checkbox__link {
+.checkbox__link {
   color: var(--accent-color);
 
   transition: color var(--anim-fast);
 }
-.form-checkbox__link:hover,
-.form-checkbox__link:focus {
+.checkbox__link:hover,
+.checkbox__link:focus {
   color: #188ce8;
 }
-
-.form-checkbox__field {
+.checkbox__field {
   appearance: none;
   display: block;
 
@@ -849,19 +844,14 @@ address {
   background-size: 0px;
   background-image: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.95703 4.75166L1.88825 4.68604L1.81923 4.75141L0.93123 5.59258L0.854858 5.66492L0.930974 5.73753L4.42671 9.07236L4.49574 9.1382L4.56476 9.07236L12.069 1.91352L12.1449 1.84116L12.069 1.76881L11.1873 0.927644L11.1183 0.861826L11.0493 0.927611L4.49577 7.17353L1.95703 4.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E%0A");
 }
-
-.form-checkbox__field:checked {
+.checkbox__field:checked {
   outline-color: var(--accent-color);
   background-size: 11px 8px;
   background-color: var(--accent-color);
 }
 
-.user-agreemen {
-  user-select: none;
-}
-
 /* Кнопка Відправити */
-.form-checkbox__button {
+.form__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -887,20 +877,8 @@ address {
 
   transition: background-color var(--anim-fast);
 }
-.form-checkbox__button:hover,
-.form-checkbox__button:focus {
+.form__button:hover,
+.form__button:focus {
   background-color: #188ce8;
 }
-.form__icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 12px;
-  fill: var(--portfolio-title-color);
 
-  transition: fill var(--anim-fast);
-}
-.form__wrapper:hover .form__icon,
-.form__wrapper:focus .form__icon {
-  fill: var(--accent-color);
-}
