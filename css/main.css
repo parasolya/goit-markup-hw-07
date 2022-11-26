@@ -178,6 +178,9 @@ address {
 .nav__link:hover, .nav__link:focus {
   color: var(--accent-color);
 }
+.nav__link:hover::after {
+  background-color: var(--accent-color);
+}
 
 .nav__link::after {
   position: absolute;
@@ -192,10 +195,6 @@ address {
   bottom: 0px;
   -webkit-transition: background-color var(--anim-fast);
   transition: background-color var(--anim-fast);
-}
-
-.nav__link:hover::after {
-  background-color: var(--accent-color);
 }
 
 .nav__link--current {
